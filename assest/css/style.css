@@ -1,0 +1,941 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #e9ebee;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+.flip {
+  rotate: 180deg;
+}
+
+
+/* =============================== Navbar ======================================= */
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  background: white;
+  box-shadow: 0px 3px 5px #e4e3e3cd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#navbar .user_search {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+  margin-right: 50px;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  max-width: 500px;
+  /* border: 1px solid black; */
+}
+
+#navbar ul li {
+  padding: 5px 40px;
+  cursor: pointer;
+}
+
+#navbar ul li:first-child {
+  border-bottom: 3px solid #006aff;
+}
+
+#navbar ul li:hover {
+  background: #e9ebee;
+  border-radius: 5px;
+
+}
+
+#navbar ul li:first-child:hover {
+  background: transparent;
+  border-radius: 0px;
+}
+
+
+#navbar .user_control {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  margin-left: 150px;
+}
+
+#navbar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#navbar .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 49px 11px 15px;
+  background-color: #e9ebee;
+  border-radius: 50px;
+}
+
+#navbar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-left: 5px;
+}
+
+#navbar .user_control span {
+  font-size: 25px;
+  background: #e9ebee;
+  border-radius: 50%;
+  padding: 7px;
+  cursor: pointer;
+}
+
+#navbar .user_control i {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  background: #e4e3e3cd;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#navbar .user_control img,
+#navbar .user_search img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#navbar .user_control span.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/* ============================== Aside Left ======================================== */
+
+aside.left {
+  position: fixed;
+  left: 0;
+  width: 280px;
+  height: 90vh;
+  overflow-y: hidden;
+  background: #e9ebee;
+}
+
+aside.left:hover {
+  overflow-y: scroll;
+}
+
+.left .div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0px 5px 10px;
+  /* margin-left: 10px; */
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.left .div:hover {
+  background: #c3c1c13a;
+}
+
+
+.left .div img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.left .div span {
+  vertical-align: middle;
+}
+
+
+.left .expand .icon,
+.left .expand2 .icon {
+  background: #c3c1c13a;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.left hr {
+  margin: 10px 0;
+  color: #0000002d;
+}
+
+.left .hide,
+.left .hide2 {
+  display: none;
+}
+
+.left .fourth .hide2 span {
+  padding-left: 10px;
+}
+
+
+.left .sub_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.left .sub_head div {
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.left .sub_head a {
+  color: #006aff;
+  opacity: 0;
+  padding: 5px 10px;
+}
+
+.left .sub_head:hover a {
+  opacity: 100%;
+}
+
+.left .sub_head:hover {
+  background: unset;
+}
+
+.left .shorts {
+  color: #767676;
+  font-weight: 800;
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.left .rules {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.left .rules div {
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.left .rules:hover {
+  background: transparent;
+}
+
+.left .rules div:hover {
+  background: transparent;
+}
+
+.left .rules span {
+  font-size: 13px;
+  color: gray;
+  vertical-align: middle;
+  line-height: 8px;
+  cursor: pointer;
+}
+
+.left .rules span.up:hover {
+  text-decoration: none;
+}
+
+.left .rules span:hover {
+  text-decoration: underline;
+}
+
+/* ================================== Right Slide =================================== */
+
+aside.right {
+  position: fixed;
+  right: 0;
+  width: 280px;
+  height: 90vh;
+  overflow-y: scroll;
+  background: #e9ebee;
+}
+
+/* aside.right:hover {
+  overflow-y: scroll;
+} */
+
+.right>p {
+  padding: 20px 10px 5px 10px;
+  color: gray;
+  font-size: 18px;
+}
+
+.right .set1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.right .set1:hover {
+  background: #c3c1c13a;
+}
+
+.right .set1 div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+}
+
+
+.right .set1 img {
+  width: 300px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.right .set1 div span {
+  color: gray;
+  font-size: 12px;
+}
+
+.right .set1 .circle {
+  padding: 10px;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #0000002d;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  opacity: 0;
+}
+
+.right .set1 .circle2 {
+  padding: 10px;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #0000002d;
+  position: absolute;
+  top: 170px;
+  right: 15px;
+  opacity: 0;
+}
+
+.right .set1:hover .circle,
+.right .set1:hover .circle2 {
+  opacity: 100;
+}
+
+.right hr {
+  margin: 10px 0 5px 10px;
+  color: #0000002d;
+}
+
+.right .p_and_p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.right .p_and_p span {
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.right .p_and_p span:hover {
+  background: #c3c1c13a;
+}
+
+.right .pages {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.right .shrink {
+  font-size: 15px;
+  margin-left: 20px;
+  padding: 5px;
+}
+
+.right .pages:hover {
+  background: #c3c1c13a;
+}
+
+.right .pages img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.right .shrink img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.right p.birth_d {
+  padding: 5px 0px;
+  margin-left: 10px;
+}
+
+.right .birthday {
+  display: flex;
+  margin: 0 5px;
+  gap: 10px;
+  padding: 10px 0px;
+  border-radius: 10px;
+}
+
+.right .birthday:hover {
+  background: #c3c1c13a;
+}
+
+.right .birthday img {
+  width: 30px;
+  height: 30px;
+}
+
+.right .birthday p {
+  font-weight: 900;
+}
+
+.right .birthday span {
+  font-weight: 300;
+}
+
+.right .contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.right .contact span {
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.right .contact span:hover {
+  background: #c3c1c13a;
+  gap: 10px;
+}
+
+.right .followers {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.right .followers:hover {
+  background: #c3c1c13a;
+}
+
+.right .followers img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.right .followers .dot {
+  position: relative;
+  top: 10px;
+  left: -20px;
+  font-size: 12px;
+  color: green;
+  background-color: white;
+  border-radius: 50%;
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.right .reduce {
+  margin-bottom: 0;
+}
+
+.right .community_chat,
+.right .group_conversation {
+  padding: 0;
+  margin: 0;
+}
+
+.right .community {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.right .community:hover {
+  background: #c3c1c13a;
+}
+
+.right .community img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.right .community .light {
+  color: gray;
+}
+
+.right .conversation {
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.right .conversation:hover {
+  background: #c3c1c13a;
+}
+
+.right .conversation img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 5px;
+}
+
+
+.right .conversation .img1 {
+  position: relative;
+  top: 6px;
+}
+
+.right .conversation .img2 {
+  position: relative;
+  top: -3px;
+  left: -15px;
+  z-index: 2px;
+}
+
+.right .conversation .dot {
+  position: relative;
+  top: 7px;
+  left: -30px;
+  font-size: 12px;
+  color: green;
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.right .to_create {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.right .to_create:hover {
+  background: #c3c1c13a;
+}
+
+.right .to_create span {
+  padding: 5px;
+  border-radius: 50%;
+  background: #c3c1c13a;
+}
+
+/* =========================== User Story Slide Bar ======================================== */
+
+.status_scroll {
+  /* border: 1px solid black; */
+  position: relative;
+  top: 20px;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 600px;
+  margin: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.status_scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.status_scroll .user_status {
+  width: 140px;
+  height: 240px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 1px 3px 5px #8080803e;
+  cursor: pointer;
+}
+
+.status_scroll .user_status img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.status_scroll .user_status div span {
+  padding: 5px;
+  background: #c3c1c13a;
+  border-radius: 50%;
+  border: 4px solid white;
+  background: #006aff;
+  color: white;
+  position: relative;
+  top: -25px;
+}
+
+.status_scroll .user_status div p {
+  margin-top: -20px;
+}
+
+.status_scroll .status {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  margin-left: 22px;
+}
+
+.status_scroll .others_status {
+  width: 140px;
+  height: 240px;
+  box-shadow: 1px 3px 5px #8080803e;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.status_scroll .others_status .img1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.status_scroll .others_status .img2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  top: -230px;
+  left: 10px;
+  border: 4px solid #006aff;
+}
+
+.status_scroll .others_status p {
+  position: relative;
+  top: -75px;
+  left: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+/* =============================== User Post ============================================ */
+.box_post {
+  position: relative;
+  top: 30px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  max-width: 500px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 1px 3px 5px #8080803e;
+}
+
+.box_post .pics_input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.341);
+}
+
+.box_post .pics_input img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.box_post .pics_input input {
+  width: 90%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: #e9ebee;
+  cursor: pointer;
+}
+
+.box_post .pics_input input::placeholder {
+  font-size: 17px;
+}
+
+.box_post .options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box_post .options div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.box_post .options div:hover {
+  background: #c3c1c13a;
+}
+
+.box_post .options div img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+/* ========================== Main Content Friends Post ========================================= */
+
+.friends_post {
+  background: white;
+  position: relative;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px #8080803e;
+  padding: 20px 0 10px 0;
+}
+
+.friends_post .friends_personal_post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 20px 15px;
+}
+
+.friends_post .friends_personal_post .friends_pic {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.friends_post .friends_personal_post .friends_pic .date_time_post p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.friends_post .friends_personal_post .friends_pic .date_time_post span {
+  vertical-align: middle;
+  padding: 3px 0;
+  cursor: pointer;
+}
+
+.friends_post .friends_personal_post .friends_pic .date_time_post span.globe {
+  font-size: 15px;
+}
+
+.friends_post .friends_personal_post img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.friends_post .more_close span {
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.friends_post .more_close span:hover {
+  background: #e4e3e3cd;
+}
+
+.friends_post .text_area {
+  padding: 0 20px;
+}
+
+.friends_post .image_area {
+  width: 100%;
+  max-height: 600px;
+  margin-top: 10px;
+  /* border: 1px solid #80808073; */
+}
+
+.friends_post .image_area img {
+  width: 100%;
+  max-height: 600px;
+}
+
+.friends_post .reaction_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #80808073;
+}
+
+.friends_post .reaction_area div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.friends_post .reaction_area div .num_likes {
+  padding-left: 5px;
+}
+
+.friends_post .reaction_area img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.friends_post .reaction_area img.like {
+  z-index: 10;
+}
+
+.friends_post .reaction_area img.love {
+  margin-left: -10px;
+  z-index: 5;
+}
+
+.friends_post .reaction_area img.care {
+  margin-left: -10px;
+  z-index: 1;
+}
+
+.friends_post .reaction_area .share_comment {
+  gap: 5px;
+}
+
+.friends_post .reaction_area .share_comment div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.friends_post .reaction_area .share_comment img {
+  width: 30px;
+  height: 30px;
+  margin-top: -5px;
+  border: none;
+}
+
+.friends_post .friend_expression {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.friends_post .friend_expression div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 20px;
+  gap: 5px;
+  margin-top: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.friends_post .friend_expression div:hover {
+  background: #c3c1c13a;
+}
+
+.friends_post .friend_expression div img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friends_post .friend_expression div i {
+  color: gray;
+}
