@@ -44,13 +44,14 @@ body {
   justify-content: space-evenly;
   align-items: center;
   gap: 5px;
-  margin-right: 50px;
+  /* margin-right: 50px; */
 }
 
 #navbar ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  place-items: center;
   flex: 1;
   max-width: 500px;
   /* border: 1px solid black; */
@@ -82,7 +83,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   gap: 10px;
-  margin-left: 150px;
+  /* margin-left: 150px; */
 }
 
 #navbar img {
@@ -142,11 +143,78 @@ body {
     'opsz' 24
 }
 
+
+@media only screen and (max-width: 1000px) {
+  #navbar .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #e9ebee;
+    border-radius: 50px;
+    place-items: center;
+  }
+
+  #navbar input {
+    display: none;
+  }
+
+  #navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    place-items: center;
+    flex: 1;
+    max-width: 300px;
+    /* border: 1px solid black; */
+  }
+
+  #navbar ul li {
+    padding: 5px 0px;
+    cursor: pointer;
+
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  #navbar ul {
+    display: none;
+  }
+}
+
+/* ============================== Main ======================================== */
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+  /* gap: 50px; */
+  width: 100%;
+}
+
+@media only screen and (max-width: 1160px) {
+  main {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 0px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ============================== Aside Left ======================================== */
 
 aside.left {
-  position: fixed;
-  left: 0;
+  position: sticky;
+  top: 55px;
   width: 280px;
   height: 90vh;
   overflow-y: hidden;
@@ -282,11 +350,22 @@ aside.left:hover {
   text-decoration: underline;
 }
 
+@media only screen and (max-width: 1160px) {
+  .aside_left {
+    display: none;
+  }
+}
+
 /* ================================== Right Slide =================================== */
 
+.aside_right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 aside.right {
-  position: fixed;
-  right: 0;
+  position: sticky;
+  top: 55px;
   width: 280px;
   height: 90vh;
   overflow-y: scroll;
@@ -604,7 +683,20 @@ aside.right {
   background: #c3c1c13a;
 }
 
+
+@media only screen and (max-width: 900px) {
+  .aside_right {
+    display: none;
+  }
+}
+
 /* =========================== User Story Slide Bar ======================================== */
+
+.main_body {
+  margin: auto;
+  /* width: 100%; */
+  padding: 0px 20px;
+}
 
 .status_scroll {
   /* border: 1px solid black; */
@@ -613,8 +705,8 @@ aside.right {
   right: 0;
   left: 0;
   display: grid;
-  grid-template-columns: 20% 80%;
-  width: 600px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
   margin: auto;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -661,8 +753,8 @@ aside.right {
 
 .status_scroll .status {
   display: grid;
-  grid-template-columns: repeat(15, 1fr);
-  margin-left: 22px;
+  grid-template-columns: repeat(100, 1fr);
+  /* margin-left: 22px; */
 }
 
 .status_scroll .others_status {
@@ -707,6 +799,9 @@ aside.right {
   right: 0;
   left: 0;
   margin: auto;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
   max-width: 500px;
   background: white;
   border-radius: 10px;
@@ -721,6 +816,7 @@ aside.right {
   gap: 10px;
   padding: 10px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.341);
+  width: 100%;
 }
 
 .box_post .pics_input img {
@@ -749,17 +845,20 @@ aside.right {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
+
 }
 
 .box_post .options div {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 5px;
   padding: 5px 15px;
   margin-top: 10px;
   border-radius: 10px;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 
 .box_post .options div:hover {
@@ -772,6 +871,32 @@ aside.right {
   object-fit: cover;
 }
 
+@media only screen and (max-width: 500px) {
+
+  .box_post {
+    width: 100%;
+    margin: auto;
+  }
+
+  /* .box_post .options {
+    display: none;
+  } */
+
+  .box_post .pics_input input {
+    width: 90%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background: #e9ebee;
+    cursor: pointer;
+  }
+
+  .box_post .options div span {
+    display: none;
+  }
+}
+
 /* ========================== Main Content Friends Post ========================================= */
 
 .friends_post {
@@ -780,6 +905,9 @@ aside.right {
   top: 30px;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 20px auto;
   max-width: 500px;
   border-radius: 10px;
@@ -792,6 +920,7 @@ aside.right {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px 20px 15px;
+  width: 100%;
 }
 
 .friends_post .friends_personal_post .friends_pic {
@@ -856,6 +985,7 @@ aside.right {
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #80808073;
+  width: 100%;
 }
 
 .friends_post .reaction_area div {
@@ -912,6 +1042,7 @@ aside.right {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+  width: 100%;
 }
 
 .friends_post .friend_expression div {
@@ -938,4 +1069,150 @@ aside.right {
 
 .friends_post .friend_expression div i {
   color: gray;
+}
+
+.friends_post .text_area {
+  width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .friends_post {
+    width: 100%;
+    place-items: center;
+  }
+
+  .friends_post .friend_expression div:last-child {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 645px) {
+
+  .status_scroll {
+    /* border: 1px solid black; */
+    position: relative;
+    top: 20px;
+    /* right: 0;
+  left: 0; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+    margin: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+}
+
+
+@media only screen and (max-width: 510px) {
+  .status_scroll {
+    position: relative;
+    top: 20px;
+    /* right: 0;
+    left: 0; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+    margin-left: -10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .status_scroll {
+    position: relative;
+    top: 20px;
+    /* right: 0;
+    left: 0; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 360px;
+    margin-left: -10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .friends_post .friend_expression div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+/* ===================================================================================================== */
+
+@media only screen and (max-width: 380px) {
+  .status_scroll {
+    position: relative;
+    top: 20px;
+    /* right: 0;
+    left: 0; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 350px;
+    margin-left: -10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .status_scroll {
+    position: relative;
+    top: 20px;
+    /* right: 0;
+    left: 0; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 300px;
+    margin-left: -10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .friends_post {
+    width: 95%;
+    place-items: center;
+    margin-left: -5px;
+  }
+
+
+  .box_post {
+    width: 95%;
+    margin: auto;
+    margin-left: -5px;
+  }
+
+  .friends_post .friend_expression div span {
+    display: none;
+  }
+
 }

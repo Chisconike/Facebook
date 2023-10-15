@@ -9,6 +9,7 @@ let fourth = document.querySelector('.fourth');
 let community = document.querySelector('.community_chat');
 let chat = document.querySelector('.group_conversation');
 let status = document.querySelector('.status');
+let friends_post = document.querySelector('.each_post')
 
 
 
@@ -460,8 +461,188 @@ people_status.forEach(item => {
   `
 })
 
+// friends post
+let post = [
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1555066931-bf19f8fd1085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2dyYW1tZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1521185496955-15097b20c5fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2dyYW1taW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1564865878688-9a244444042a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+  {
+    img: './assest/img/test.jpg',
+    name: 'Chisco_Emmanuel',
+    time_post: '1d .',
+    post_img: 'https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    num_likes: '1.9m',
+    num_comment: '46.9k',
+    num_share: '900k',
+    user_img: './assest/img/test.JPG',
+  },
+]
 
 
+post.forEach(item => {
+  friends_post.innerHTML += `
+  <div class="friends_post">
+        <div class="friends_personal_post">
+          <div class="friends_pic">
+            <img src="${item.img}" alt="">
+            <div class="date_time_post">
+              <p>${item.name}</p>
+              <span>${item.time_post}</span>
+              <span class="material-symbols-outlined globe">
+                globe
+              </span>
+            </div>
+          </div>
+          <div class="more_close">
+            <span class="material-symbols-outlined">
+              more_horiz
+            </span>
+            <span class="material-symbols-outlined">
+              close
+            </span>
+          </div>
+        </div>
+        <div class="text_area">
+          link to project 👉: <a href="#">https://chisconike.github.io/Instagram/</a> <br> <br>
+          Hello Everyone @followers,
+          I'm excited to introduce my latest project - an Instagram clone that's been in the making for a while. As a
+          FullStack Web Developer and Architect, I've poured my passion for coding into this project, and I'm thrilled
+          to
+          share it with you all. <a href="#">#youtubeclone #webdevelopment #fullstackdeveloper #codingproject
+            #TechInnovation #webdev
+            #webappdevelopment #softwareengineering #CodeCrafting #youtube</a>… <b>See more</b>
+        </div>
+        <div class="image_area">
+          <img
+            src="${item.post_img}"
+            alt="">
+        </div>
+        <div class="reaction_area">
+          <div>
+            <img src="./assest/img/like.png" alt="" class="like">
+            <img src="./assest/img/love.png" alt="" class="love">
+            <img src="./assest/img/care.png" alt="" class="care">
+            <span class="num_likes">${item.num_likes}</span>
+          </div>
+          <div class="share_comment">
+            <div>
+              <span>${item.num_comment}</span>
+              <img src="./assest/img/friendcommentfill.png" alt="">
+            </div>
+            <div>
+              <span>${item.num_share}</span>
+              <img src="./assest/img/friendsharefill.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="friend_expression">
+          <div>
+            <img src="./assest/img/friendlike.png" alt="">
+            <span>Like</span>
+          </div>
+          <div>
+            <img src="./assest/img/friendcomment.png" alt="">
+            <span>Comment</span>
+          </div>
+          <div>
+            <img src="./assest/img/friendshare.png" alt="">
+            <span>Share</span>
+          </div>
+          <div>
+            <img src="${item.user_img}" alt="">
+            <i class="bi bi-caret-down-fill"></i>
+          </div>
+        </div>
+      </div>
+  `
+})
 
 
 $('.expand').click(function () {
