@@ -13,6 +13,7 @@ let friends_post = document.querySelector('.each_post')
 
 
 
+
 // Start Under Contact by the right scroll people to follow Start //
 let list = [
   {
@@ -656,3 +657,20 @@ $('.expand2').click(function () {
   $('.icon').toggleClass('flip')
   // $('.expand').text('see less');
 });
+
+
+$('.sun').hide()
+
+$('.moon').click(function () {
+  $(this).hide()
+  $('.sun').show()
+  $("*").css("background", "#000000")
+  $("*").css("color", "#ffffff")
+})
+
+$('.sun').click(function () {
+  $(this).hide()
+  $('.moon').show()
+  $("*").css("background", "#e9ebee")
+  $("*").css("color", "#000000")
+})
